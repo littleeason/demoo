@@ -61,8 +61,9 @@
       let myForm = this.form
       let content = myForm.querySelector('input[name=content]').value
       let name = myForm.querySelector('input[name=name]').value
-      if(!!content||!!name){
-        alert('你忘记写了哦')
+      if(!content||!name){
+        alert('你忘记写了哦');
+        return;
       }
       this.model.save(name, content).then(function(object) {
         let li = document.createElement('li')
